@@ -63,7 +63,7 @@
         
     </div>
     
-<div id="bbb">
+<div style="display:grid;" id="bbb">
     <div id="dodsign" class="hidden" >
            
         <button value="of" onclick="ip('of')" class="sign">of</button>
@@ -154,7 +154,7 @@
 
 
 
-document.querySelectorAll(".hidden").forEach((c)=> c.style.display="none" );
+// document.querySelectorAll(".hidden").forEach((c)=> c.style.display="none" );
 
 </script>
 
@@ -289,28 +289,18 @@ inl.value=inl.value.slice(0,-1);
 
  function showfun(x){
  
+ 
+ 
   if(x.className=="nknk"){
   
+  document.getElementById("bbb").scrollIntoView({ behavior: "smooth", inline: "start" });
   
-  document.querySelectorAll(".hidden").forEach((c)=>{
-  c.style.display="grid";
-  
-  });
   x.className="nknh";
-  x.innerText="123";
-  document.getElementById("Num").style.display="grid";
-  
   }
   else{
   
-  document.getElementById("Num").style.display="grid";
-  
-  document.querySelectorAll(".hidden").forEach((c)=>{
-  c.style.display="none";
-  
-  });
+  document.getElementById("allbut").scrollIntoView({ behavior: "smooth", inline: "start" });
   x.className="nknk";
-  x.innerText="FX";
   }
   
 }

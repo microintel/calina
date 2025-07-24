@@ -320,3 +320,18 @@ gap:0px;
 padding-right:9.5%;
 }
 
+
+#vvv{
+
+display:flex;
+flex-direction:row;
+width:300px;
+overflow-x:auto;
+
+
+}
+
+#bbb{
+
+margin-right:30px;
+}
