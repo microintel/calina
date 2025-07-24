@@ -1,0 +1,414 @@
+<html>
+
+<head>
+    <meta name="width" content="width=device-width ,initial-scale=1.0">
+    <title> Calina </title>
+    <link rel="stylesheet" href="CALCIs.css">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.cdnfonts.com/css/digit" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.1/math.min.js"></script>
+
+
+</head>
+
+<body>
+<div id="container">
+<div class="inpx">
+<div class="inpp">
+    <input id="inp">
+</div>
+</div>
+<div class="allnkn">
+     <div id="show">
+       <div class="d1">
+       <font>CALINA</font>
+       </div>
+       <div class="d2">
+       
+        <button onclick="showfun(this)" id="showfun" class="nknk" style="background-color:rgb(119, 163, 43);color: black;";>FX</button> 
+        <button type="submit" class="sign" onclick="cler()" style="background-color:rgb(119, 163, 43);color: black;"> CLEAR</button>
+      </div>
+        </div>
+     <div id="vvv">
+        <div id="allbut" class="allbutton">
+        <div id="Num" >
+  <button onclick="ip(7)" class="BUT">7</button>
+  <button onclick="ip(8)" class="BUT">8</button>
+  <button onclick="ip(9)" class="BUT">9</button>
+  <button onclick="eras()" style="background-color:rgb(119, 163, 43);color: black;">&#9003</button>
+  
+  <button onclick="ip(4)" class="BUT">4</button>
+  <button onclick="ip(5)" class="BUT">5</button>
+  <button onclick="ip(6)" class="BUT">6</button>
+  <button onclick="ip('/')" class="sign">/</button>
+  
+  
+  <button onclick="ip(1)" class="BUT">1</button>
+  <button onclick="ip(2)" class="BUT">2</button>
+  <button onclick="ip(3)" class="BUT">3</button>
+  <button onclick="ip('-')" class="sign">-</button>
+
+  <button onclick="ip(',')" class="sign">,</button>
+  <button onclick="ip(0)" class="BUT">0</button>
+  <button onclick="ip('+')" class="sign">+</button>
+<button onclick="ip('*')" class="sign">×</button>
+<button class="sign"> j</button>
+<button onclick="ccc()" class="sign" style="background-color:rgb(119, 163, 43);color: black;"> Submit </button>
+
+</div>
+
+        
+    </div>
+    
+<div id="bbb">
+    <div id="dodsign" class="hidden" >
+           
+        <button value="of" onclick="ip('of')" class="sign">of</button>
+        <button class="sign" onclick=" modulas()">MOD</button>
+        <button class="sign" onclick="fact()">Fact</button>
+        <button class="sign" onclick="gcd()">GCD</button>
+        <button class="sign" onclick="power()">^</button>
+        <button class="sign" onclick="root()">√</button>
+        <button class="sign" onclick="per()">%</button>
+        <button class="sign" onclick="pi()">π</button>
+        <button class="logic" onclick="dec()">Dec</button>
+        <button class="logic" onclick="bin()">0b</button>
+        <button class="logic" onclick="hex()">0x</button>
+        <button class="logic" onclick="oct()">0o</button>
+
+    </div>
+
+
+
+    <div id="Static-functions" class="hidden">
+
+
+<button class="static" onclick="mean()"> Mean </button>
+<button class="static" onclick="median()"> Median </button>
+<button class="static" onclick="std()">STD</button>
+<button class="static" onclick="vari()"> Var </button>
+<button class="static" onclick="max()"> Max </button>
+<button class="static" onclick="min()"> Min </button>
+
+
+
+
+    </div>
+
+
+
+
+    <div id="logic-gate" class="hidden">
+
+
+<button class="log" onclick="and()"> AND </button>
+<button class="log" onclick="or()">OR </button>
+<button class="log" onclick="notu()">NOT</button>
+<button class="log" onclick="xor()"> XOR </button>
+
+
+
+    </div>
+
+<div id="tri" class="hidden">
+<button class="tr" onclick="si()"> SIN </button>
+<button class="tr" onclick="co()"> COS </button>
+<button class="tr" onclick="ta()">TAN</button>
+</div>
+    
+
+
+    <!--- <div id="units-conv">
+        <button class="unit" onclick="">Temprature</button>
+        <input  type="radio"  class="unit">LENGTH</input>
+        
+        <button class="unit">WEIGHT</button>
+        <button class="unit">VOLUME</button>
+        <button class="unit">BYTES</button>--->
+
+
+
+</div>
+</div>
+    </div>
+</div>
+
+   
+
+</div>
+</div>
+
+<div class="devp">
+<h6 style="margin:0px;padding:0px;">Developed By </h6>
+<h3 style="margin:0px;padding:0px;">MicroIntel</h3>
+
+</div>
+
+<audio style="display:none;" id="clic" src="cli.mp3"></audio>
+
+<script type="text/javascript">
+
+
+
+
+document.querySelectorAll(".hidden").forEach((c)=> c.style.display="none" );
+
+</script>
+
+        <script src="math.js"></script>
+
+
+<script>
+  document.body.addEventListener('click', () => {
+    const sound = document.getElementById("clic");
+    sound.currentTime = 0; 
+    sound.play();
+  });
+</script>
+
+        <script>
+
+
+
+            let inl = document.getElementById("inp");
+
+
+function eras(){
+inl.value=inl.value.slice(0,-1);
+}
+
+
+
+
+
+            function ip(r) {
+
+                inl.value += r;
+            }
+
+            function bin() {
+                inl.value = math.bin(inl.value);
+
+            }
+
+            function dec() {
+             const a= inl.value.trim();
+             const b=parseInt(a, 2);
+                inl.value = b;  
+            }
+
+            
+            function oct() {
+             const a= inl.value.trim();
+             const b=parseInt(a, 8);
+                inl.value = b;  
+            }
+
+            
+            function hex() {
+             const a= inl.value.trim();
+             const b=parseInt(a, 16);
+                inl.value = b;  
+            }
+
+
+
+            function cler() {
+                inl.value = " "
+            }
+
+
+
+
+
+
+
+            function add() {
+
+                eval()
+            }
+
+
+            function ccc() {
+            if(inl.value==""){
+            inl.value="Enter Input";
+            }
+                inl.value = eval(inl.value);
+
+            }
+
+            function gcd() {
+                const a=inl.value.split(",").map(Number)
+                inl.value = math.gcd(a);
+            }
+
+
+            function root() {
+                inl.value = math.sqrt(inl.value);
+            }
+
+            function power() {
+                const [base, exponent] = inl.value.split(",").map(Number);
+  inl.value = math.pow(base, exponent);
+            }
+
+            function modulas() {
+                const a=inl.value.split(",").map(Number);
+                inl.value = math.mod(a[0], a[1]);
+            }
+
+            function fact() {
+                inl.value = math.factorial(inl.value);
+            }
+
+
+
+
+
+
+
+            function per() {
+                let c=inl.value.split("of").map(Number);
+                a=c[0];
+                b=c[1];
+    inl.value =(a*0.01)*b
+
+
+            }
+
+
+
+
+
+
+
+
+
+ function showfun(x){
+ 
+  if(x.className=="nknk"){
+  
+  
+  document.querySelectorAll(".hidden").forEach((c)=>{
+  c.style.display="grid";
+  
+  });
+  x.className="nknh";
+  x.innerText="123";
+  document.getElementById("Num").style.display="grid";
+  
+  }
+  else{
+  
+  document.getElementById("Num").style.display="grid";
+  
+  document.querySelectorAll(".hidden").forEach((c)=>{
+  c.style.display="none";
+  
+  });
+  x.className="nknk";
+  x.innerText="FX";
+  }
+  
+}
+
+function pi(){
+    inl.value = math.pi;
+}
+
+function mean() {
+                const values = inl.value.split(",").map(Number);
+  inl.value = math.mean(values);
+            }
+
+ function median() {
+    const values = inl.value.split(",").map(Number);
+
+                inl.value = math.median(values);
+            }
+            function std() {
+                const values = inl.value.split(",").map(Number);
+                inl.value = math.std(values);
+            }
+            function vari() {
+                const a =inl.value.split(",").map(Number);
+                inl.value = math.variance(a);
+            }
+
+            function min() {
+                const a=inl.value.split(",").map(Number);
+                inl.value = math.min(a);
+            }
+function max() {
+    const a=inl.value.split(",").map(Number)
+                inl.value = math.max(a);
+            }
+
+
+
+function and() {
+  const [a, b] = inl.value.split(",").map(Number);
+  inl.value = math.bitAnd(a, b);
+}
+
+function or() {
+  const [a, b] = inl.value.split(",").map(Number);
+  inl.value = math.bitOr(a, b);
+}
+
+function xor() {
+  const [a, b] = inl.value.split(",").map(Number);
+  inl.value = math.bitXor(a, b);
+}
+
+function notu() {
+  const a = Number(inl.value);
+  inl.value = math.bitNot(a);
+}
+
+
+
+           function si() {
+                inl.value = math.sin(inl.value);
+            }
+
+
+            
+           function co() {
+                inl.value = math.cos(inl.value);
+            }
+            
+
+
+           function ta() {
+                inl.value = math.tan(inl.value);
+            }
+            
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </script>
+</body>
+
+
+
+</html>
